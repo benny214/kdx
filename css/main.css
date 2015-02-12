@@ -1,0 +1,528 @@
+@font-face {
+  font-family: 'robotobold';
+  src: url('../fonts/roboto-bold.eot');
+  src: url('../fonts/roboto-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-bold.woff') format('woff'), url('../fonts/roboto-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'roboto_medium';
+  src: url('../fonts/roboto-medium.eot');
+  src: url('../fonts/roboto-medium.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-medium.woff') format('woff'), url('../fonts/roboto-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'roboto_ltregular';
+  src: url('../fonts/roboto-light.eot');
+  src: url('../fonts/roboto-light.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light.woff') format('woff'), url('../fonts/roboto-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?8676604');
+  src: url('../fonts/fontello.eot?8676604#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?8676604') format('woff'), url('../fonts/fontello.ttf?8676604') format('truetype'), url('../fonts/fontello.svg?8676604#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+/* ==========================================================================
+Спрайты
+========================================================================== */
+
+.plus-hover,
+.plus,
+.white-circle,
+.black-circle,
+.green-circle,
+.grey-circle,
+.red-circle,
+.slider-left,
+.slider-right,
+.arrow,
+.active-arrow,
+.price-arr {
+  display: inline-block;
+  background: url('../img/sprite.png') no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+.arrow {
+  background-position: -10px -338px;
+  width: 10px;
+  height: 6px;
+  margin-bottom: 3px;
+  margin-left: 9px;
+  cursor: pointer;
+}
+.plus:hover {
+  background-position: -10px -0px;
+  width: 41px;
+  height: 41px;
+}
+.plus {
+  transition: all 0.3s ease;
+  background-position: -10px -51px;
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: 330px;
+  left: 410px;
+  cursor: pointer;
+  z-index: 999;
+}
+.white-circle {
+  background-position: -10px -102px;
+  width: 22px;
+  height: 22px;
+}
+.black-circle {
+  background-position: -10px -134px;
+  width: 20px;
+  height: 20px;
+}
+.green-circle {
+  background-position: -10px -164px;
+  width: 20px;
+  height: 20px;
+}
+.grey-circle {
+  background-position: -10px -194px;
+  width: 20px;
+  height: 20px;
+}
+.red-circle {
+  background-position: -10px -224px;
+  width: 20px;
+  height: 20px;
+}
+.price-arr {
+  background-position: -30px -353px;
+  width: 9px;
+  height: 4px;
+  margin-bottom: 3px;
+  margin-left: -3px;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}
+.icon-right-open:before {
+  content: '\e806';
+  color: #fff;
+  display: none;
+}
+.icon-down-open:before {
+  content: '\e807';
+  color: #fff;
+  display: none;
+}
+.icon-align-justify:before {
+  content: '\e800';
+  color: #fff;
+  display: none;
+}
+/* ==========================================================================
+Стилизация
+========================================================================== */
+
+.header-container {
+  width: 100%;
+  background-color: #282D30;
+}
+.header {
+  width: 980px;
+  margin: 0 auto 78px;
+  position: relative;
+}
+.header__logo {
+  float: left;
+  position: absolute;
+  top: 12px;
+  left: 5px;
+}
+.header__nav {
+  float: right;
+  font-family: 'robotobold';
+  margin-bottom: 35px;
+}
+.nav__item {
+  float: left;
+  margin-left: 39px;
+  margin-top: 50px;
+}
+.nav__item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+.nav__dropdown {
+  padding: 0;
+  background-color: #282D30;
+  top: 95px;
+  left: 628px;
+  position: absolute;
+}
+.dropdown__item {
+  border-bottom: 1px solid #D7DCDE;
+  ;
+}
+.dropdown__item a {
+  font-size: 14px;
+  font-family: 'roboto_medium';
+  display: block;
+  padding: 25px 109px 6px 24px;
+}
+.dropdown__item a:hover {
+  background-color: #00aeef;
+}
+.dropdown__item a:last-child {
+  padding-bottom: 11px;
+  padding-top: 18px;
+}
+.wrapper {
+  width: 1140px;
+  margin: 0 auto -102px auto;
+  min-height: 100%;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+footer,
+.wrapper:after {
+  height: 102px;
+}
+.select {
+  margin-bottom: 46px;
+}
+.select__form {
+  position: relative;
+}
+.form__label {
+  position: absolute;
+  top: -43px;
+  left: 129px;
+  font-size: 15px;
+  font-family: Arial;
+}
+.form__select {
+  padding: 5px;
+  width: 211px;
+  margin-left: 130px;
+  margin-top: -7px;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 51px;
+}
+.slider__wrapper {
+  height: 100%;
+  list-style: none;
+  overflow: hidden;
+  *zoom: 1;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+.slider__item {
+  height: 100%;
+  float: left;
+  clear: none;
+  position: relative;
+}
+.slider__arrows-item {
+  position: absolute;
+  display: block;
+  margin-bottom: -20px;
+  padding: 20px;
+  cursor: pointer;
+}
+.slider__arrows-item--right {
+  bottom: 53%;
+  background: url('../img/sprite.png');
+  background-position: -10px -296px;
+  width: 18px;
+  height: 32px;
+  right: 17px;
+}
+.slider__arrows-item--left {
+  bottom: 53%;
+  left: 39px;
+  background: url('../img/sprite.png');
+  background-position: -10px -254px;
+  width: 18px;
+  height: 32px;
+}
+.plus:first-child {
+  position: absolute;
+  top: 138px;
+}
+.plus:last-child {
+  position: absolute;
+  top: 112px;
+  cursor: pointer;
+  left: 593px;
+  transition: all 0.3s ease;
+}
+.hidden__item--top {
+  position: absolute;
+  color: #fff;
+  top: 120px;
+  right: 284px;
+  opacity: 1;
+  display: none;
+  font-size: 20px;
+  font-family: Arial;
+}
+.hidden__item--bottom {
+  position: absolute;
+  bottom: 109px;
+  left: 150px;
+  color: #fff;
+  opacity: 1;
+  display: none;
+  font-family: Arial;
+  font-size: 20px;
+}
+.hidden__item--top a,
+.hidden__item--bottom a {
+  text-decoration: none;
+  color: #00aeef;
+  font-size: 15px;
+}
+.slider__item p {
+  margin: 0 0 5px 0;
+}
+.table__head {
+  border-left: 3px solid #8B9497;
+  padding-left: 13px;
+  font-family: 'robotobold';
+  margin-left: 97px;
+  font-size: 20px;
+}
+table {
+  margin: 0 auto 49px auto;
+  font-family: 'roboto_ltregular';
+}
+th {
+  background-color: #ccc;
+  text-align: center;
+  padding: 18px 0 11px;
+  font-size: 15px;
+  font-family: 'roboto_medium';
+}
+th:first-child {
+  text-align: left;
+  padding-left: 15px;
+}
+tr {
+  background-color: #f5f6f6;
+  border-bottom: 1px solid #ccc;
+}
+td {
+  padding: 10px 18px 10px 10px;
+  text-align: center;
+  color: #323232;
+}
+tr>td:nth-of-type(1) {
+  text-align: left;
+}
+.table__price {
+  border-bottom: 1px dotted #000;
+  cursor: pointer;
+}
+.table__add {
+  font-size: 13px;
+  color: #8b9497;
+}
+table a {
+  text-decoration: none;
+  padding: 19px;
+  color: #8b9497;
+  transition: all 0.5s ease;
+}
+table a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #282d30;
+  padding: 5px 15px 5px 15px;
+  border-radius: 16px;
+}
+footer {
+  background-color: #282D30;
+  color: #fff;
+  text-align: center;
+  padding-top: 38px;
+  font-family: 'roboto_ltregular';
+  font-size: 11px;
+}
+footer p {
+  margin: 0;
+}
+/* ==========================================================================
+Медиа запросы
+========================================================================== */
+
+@media screen and (max-width: 768px) {
+  .header,
+  .wrapper {
+    width: 100%;
+  }
+  .header__logo {
+    float: none;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .header__nav {
+    float: none;
+    width: 100%;
+  }
+  .nav__item {
+    float: none;
+    text-align: left;
+    margin: 0 0 19px 0px;
+    position: relative;
+  }
+  .nav__item a {
+    padding: 0px 0px 7px 24px;
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  .icon-right-open:before,
+  .icon-down-open:before {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
+  .icon-align-justify:before {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 33px;
+    right: 26px;
+  }
+  .nav__dropdown {
+    top: 0;
+    left: 0;
+    position: relative;
+    background-color: #383d40;
+  }
+  .dropdown__item {
+    position: relative;
+    padding: 10px;
+  }
+  .active {
+    background-color: #00aeef;
+  }
+  .form__select {
+    margin-left: 24px;
+  }
+  .form__label {
+    left: 24px;
+    top: -36px;
+  }
+  .slider {
+    display: none;
+  }
+  table,
+  th,
+  td,
+  tr,
+  tbody {
+    display: block;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+  tr:first-child {
+    display: none;
+  }
+  /*Не хотел делать две разных таблицы, решил сделть флексбоксом, 
+  т.к. его нормально поддерживают мобильные браузеры */
+  tr {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  tr>td:nth-child(1) {
+    order: 1;
+    width: 56%;
+  }
+  tr>td:nth-child(3) {
+    order: 2;
+    width: 6%;
+  }
+  tr>td:nth-child(5) {
+    order: 3;
+    width: 38%;
+  }
+  tr>td:nth-child(2) {
+    order: 4;
+    width: 26%;
+  }
+  tr>td:nth-child(4) {
+    order: 5;
+    width: 31%;
+  }
+  tr>td:nth-child(6) {
+    order: 6;
+    width: 33%;
+    text-align: right;
+  }
+  table a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #282d30;
+    padding: 5px 15px 5px 15px;
+    border-radius: 16px;
+  }
+}
+/* ==========================================================================
+Классы помощники
+========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
